@@ -53,7 +53,7 @@ pages = [
     { img: "images/Contrast.png" },
     { img: "images/Colorblindness.png" },
     { img: "images/ClosedCaptionsTranscript.png" },
-    { img: "images/ImagesAltText.png" },
+    { img: "images/ImagesAltText.png", quiz: true },
     { img: "images/CognitiveLoadNavigation.png" },
     { img: "images/BackCover.png" },
 
@@ -62,6 +62,7 @@ pages = [
 ]
 
 function initPage() {
+
 
     //Get current page
     let currentPage = pages[pageIndex].img;
@@ -92,6 +93,16 @@ function initPage() {
     pageNext.addEventListener("click", next);
     pageBack.addEventListener("click", back);
 
+    if (pages[pageIndex].quiz === true) {
+        pageNext.disabled = true;
+        pageNext.style.display = "none";
+        startQuiz();
+    } else {
+        endQuiz();
+    }
+
+
+
 }
 
 
@@ -116,7 +127,6 @@ function back() {
 }
 
 function resetPage() {
-    pageIndex = 0;
     initPage();
 }
 
@@ -131,10 +141,16 @@ let score = 0;
 
 function startQuiz() {
     currentQuestionIndex = 0;
-    score = 0;
+
     nextBtn.innerHTML = "Next";
-    resetPage();
+
+    quizContainer.style.display = "block";
+
     showQuestion();
+}
+
+function endQuiz() {
+    quizContainer.style.display = "none";
 }
 
 function showQuestion() {
@@ -222,8 +238,6 @@ function showPopup(explanation) {
     popupText.innerHTML = explanation
 }
 
-startQuiz();
 
 
-startQuiz();
 
