@@ -33,6 +33,11 @@ const questions = [
     },
 ];
 
+
+const quizContainer = document.getElementById("quizContainer")
+
+quizContainer.style.display = "none";
+
 const pageElement = document.getElementById("page");
 const pageNext = document.getElementById("pageNext");
 const pageBack = document.getElementById("pageBack");
@@ -43,11 +48,17 @@ const popup = document.getElementById("popup");
 let popupText = document.getElementById("popupText");
 
 pages = [
-    { img: "images/img-1.png" },
-    { img: "images/img-2.png" },
-    { img: "images/img-3.png" },
-    { img: "images/img-4.png" },
-    { img: "images/img-5.png" }
+    { img: "images/Cover.png" },
+    { img: "images/FontChoicesDraft.png" },
+    { img: "images/Contrast.png" },
+    { img: "images/Colorblindness.png" },
+    { img: "images/ClosedCaptionsTranscript.png" },
+    { img: "images/ImagesAltText.png" },
+    { img: "images/CognitiveLoadNavigation.png" },
+    { img: "images/BackCover.png" },
+
+
+
 ]
 
 function initPage() {
@@ -212,3 +223,7 @@ function showPopup(explanation) {
 }
 
 startQuiz();
+
+
+startQuiz();
+
