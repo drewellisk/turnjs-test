@@ -238,6 +238,3 @@ function showPopup(explanation) {
     popupText.innerHTML = explanation
 }
 
-
-
-
